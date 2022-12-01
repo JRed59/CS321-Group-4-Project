@@ -21,8 +21,20 @@ public class UserInterface {
         }
 
         //using number result, prompt for that many class entries
-        System.out.printf("Enter %d class entries formatted as followed:\tClassIdentifier StartTime(in 24 hour format) EndTime(in 24 hour format) Building\n", result);
-        
+        System.out.printf("Enter %d class entries formatted as followed:\tClassIdentifier,StartTime(in 24 hour format),EndTime(in 24 hour format),Building\n", result);
+        System.out.printf("The commas in the formatting will separate your entries, so ensure that is the only character to separate.\n");
+
+        User user1 = new User();    //creates the user class to be later edited
+        for (int i = 0; i < result; i++){
+            stringNum = userInput.nextLine();   //get next user input line
+            //separate the string that was inputted by the user with ' ' as a delimiter
+            //check each of the time slots to ensure they are actual integers
+                //if they are not integers, decrement i and prompt the user again with a notification of the error
+            
+            
+
+        }
+
 
         userInput.close(); //close scanner once finished
     }
