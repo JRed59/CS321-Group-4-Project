@@ -13,7 +13,7 @@ public class User {
     }
 
     //User Constructor with all inputs
-    public Student(String Id, int start, int end, String loc){
+    public User(String Id, int start, int end, String loc){
         Identifier = Id;
         timeStart = start;
         timeEnd = end;
