@@ -3,7 +3,7 @@
 import java.util.ArrayList;
 public class User {
     // **Q: do we need an option for day of the week?
-    ArrayLisy <String> Identifier = new ArrayList<>();
+    ArrayList <String> Identifier = new ArrayList<>();
     ArrayList <Integer> timeStart = new ArrayList<>();
     ArrayList <Integer> timeEnd = new ArrayList<>();
     ArrayList <String> location = new ArrayList<>();
@@ -12,8 +12,12 @@ public class User {
     public User() {
 
     }
+    //not sure if needed
+    public User(String ID, int start, int end, String loc) {
+        
+    }
 
-    public addID(String id) {
+    public void addID(String id) {
         Identifier.add(num);
     }
 

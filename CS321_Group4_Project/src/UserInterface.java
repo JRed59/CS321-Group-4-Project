@@ -1,5 +1,5 @@
 //temporarily just prompts user with text, can switch to GUI later
-
+import java.util.ArrayList;
 import java.util.Scanner;
 public class UserInterface {
     public static void main(String[] args) {
@@ -19,7 +19,11 @@ public class UserInterface {
             stringNum = userInput.nextLine(); //read in input
             result = checkUserNum(stringNum);
         }
-
+        //initialize variables to be used to store user entry
+        int startTime = 0;
+        int endTime = 0;
+        String building = "temp";
+        String className = "temp";
         //using number result, prompt for that many class entries
         System.out.printf("Enter %d class entries formatted as followed:\tClassIdentifier,StartTime(in 24 hour format),EndTime(in 24 hour format),Building\n", result);
         System.out.printf("The commas in the formatting will separate your entries, so ensure that is the only character to separate.\n");
@@ -28,11 +32,49 @@ public class UserInterface {
         for (int i = 0; i < result; i++){
             stringNum = userInput.nextLine();   //get next user input line
             //separate the string that was inputted by the user with ' ' as a delimiter
+            String[] userInputSeparated = stringNum.split(" ", 0);
             //check each of the time slots to ensure they are actual integers
+            try {
+                startTime = Integer.parseInt(String[1]);
+            } catch(NumberFormatException e) {
                 //if they are not integers, decrement i and prompt the user again with a notification of the error
-            
-            
+                System.out.println("Your start time is not valid, please try again.");
+                i--;
+                continue;
+            }
+            try {
+                endTime = Integer.parseInt(String[2]);
+            } catch(NumberFormatException e) {
+                //if they are not integers, decrement i and prompt the user again with a notification of the error
+                System.out.println("Your end time is not valid, please try again.");
+                i--;
+                continue;
+            }
+            if (startTime >= 0 || startTime <= 2400) {
+                //check if the time is within the correct parameters
+            } else {
+                //if not within paramters
+                System.out.println("Your start time is not within the correct parameters");
+                i--;
+                continue;
+            }
+            if (endTime >= 0 || endTime <= 2400) {
+                //check if the time is within the correct parameters
+            } else {
+                //if not within paramters
+                System.out.println("Your end time is not within the correct parameters");
+                i--;
+                continue;
+            }
 
+            //**should check if the building names match any ones from a list
+
+            //add the collected info into the user
+            user1.addID(userInputSeparated[0]);
+            user1.addStartTime(startTime);
+            user1.addEndTime(endTime);
+            user1.addLocation(userInputSeparated[3]);
+            
         }
 
 
