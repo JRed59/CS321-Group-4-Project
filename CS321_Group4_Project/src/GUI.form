@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GUI">
+  <grid id="27dc6" binding="mainMenu" layout-manager="CardLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="1473" height="1223"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="4e9e2" binding="topMenu" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <card name="Card1"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="98394" class="javax.swing.JButton" binding="createOrModifyScheduleButton">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="36"/>
+              <text value="Create or modify schedule"/>
+            </properties>
+          </component>
+          <component id="610d2" class="javax.swing.JButton" binding="findRestaurantButton">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="36"/>
+              <text value="Find Restaurants"/>
+            </properties>
+          </component>
+          <component id="2497b" class="javax.swing.JButton" binding="exitButton">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="36"/>
+              <text value="Exit"/>
+            </properties>
+          </component>
+          <component id="f3603" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="36"/>
+              <horizontalAlignment value="10"/>
+              <horizontalTextPosition value="11"/>
+              <text value="Main Menu"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="a7d07" binding="scheduleEditor" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <card name="Card2"/>
+        </constraints>
+        <properties/>
+        <border type="none" title="Schedule Menu" title-justification="2" title-position="2"/>
+        <children>
+          <grid id="b569d" binding="selector" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="5da5b" class="javax.swing.JButton" binding="createSchedule">
+                <constraints/>
+                <properties>
+                  <font size="36"/>
+                  <text value="Create/Modify Schedule"/>
+                </properties>
+              </component>
+              <component id="1e4fe" class="javax.swing.JButton" binding="clearSchedule">
+                <constraints/>
+                <properties>
+                  <font size="36"/>
+                  <text value="Clear Schedule"/>
+                </properties>
+              </component>
+              <component id="ed0e1" class="javax.swing.JButton" binding="mainMenuButton" default-binding="true">
+                <constraints/>
+                <properties>
+                  <font size="36"/>
+                  <text value="Main menu"/>
+                </properties>
+              </component>
+              <component id="c1252" class="javax.swing.JButton" binding="quitProgramButton">
+                <constraints/>
+                <properties>
+                  <font size="36"/>
+                  <text value="Quit Program"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="abccf" binding="topPanel" layout-manager="GridLayoutManager" row-count="13" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <card name="Card4"/>
+        </constraints>
+        <properties/>
+        <border type="none" title="v"/>
+        <children>
+          <component id="3e253" class="javax.swing.JTextField" binding="cName">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="b2653" class="javax.swing.JComboBox" binding="cSTime">
+            <constraints>
+              <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <model>
+                <item value="06:00"/>
+                <item value="06:15"/>
+                <item value="06:30"/>
+                <item value="06:45"/>
+                <item value="07:00"/>
+                <item value="07:15"/>
+                <item value="07:30"/>
+                <item value="07:45"/>
+                <item value="08:00"/>
+                <item value="08:15"/>
+                <item value="08:30"/>
+                <item value="08:45"/>
+                <item value="09:00"/>
+                <item value="09:15"/>
+                <item value="09:30"/>
+                <item value="09:45"/>
+                <item value="10:00"/>
+                <item value="10:15"/>
+                <item value="10:30"/>
+                <item value="10:45"/>
+                <item value="11:00"/>
+                <item value="11:15"/>
+                <item value="11:30"/>
+                <item value="11:45"/>
+                <item value="12:00"/>
+                <item value="12:15"/>
+                <item value="12:30"/>
+                <item value="12:45"/>
+                <item value="13:00"/>
+                <item value="13:15"/>
+                <item value="13:30"/>
+                <item value="13:45"/>
+                <item value="14:00"/>
+                <item value="14:15"/>
+                <item value="14:30"/>
+                <item value="14:45"/>
+                <item value="15:00"/>
+                <item value="15:15"/>
+                <item value="15:30"/>
+                <item value="15:45"/>
+                <item value="16:00"/>
+                <item value="16:15"/>
+                <item value="16:30"/>
+                <item value="16:45"/>
+                <item value="17:00"/>
+                <item value="17:15"/>
+                <item value="17:30"/>
+                <item value="17:45"/>
+                <item value="18:00"/>
+                <item value="18:15"/>
+                <item value="18:30"/>
+                <item value="18:45"/>
+                <item value="19:00"/>
+                <item value="19:15"/>
+                <item value="19:30"/>
+                <item value="19:45"/>
+                <item value="20:00"/>
+                <item value="20:15"/>
+                <item value="20:30"/>
+                <item value="20:45"/>
+                <item value="21:00"/>
+                <item value="21:15"/>
+                <item value="21:30"/>
+                <item value="21:45"/>
+                <item value="22:00"/>
+                <item value="22:15"/>
+                <item value="22:30"/>
+                <item value="22:45"/>
+                <item value="23:00"/>
+              </model>
+            </properties>
+          </component>
+          <component id="d84ee" class="javax.swing.JComboBox" binding="cETime">
+            <constraints>
+              <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <model>
+                <item value="06:00"/>
+                <item value="06:15"/>
+                <item value="06:30"/>
+                <item value="06:45"/>
+                <item value="07:00"/>
+                <item value="07:15"/>
+                <item value="07:30"/>
+                <item value="07:45"/>
+                <item value="08:00"/>
+                <item value="08:15"/>
+                <item value="08:30"/>
+                <item value="08:45"/>
+                <item value="09:00"/>
+                <item value="09:15"/>
+                <item value="09:30"/>
+                <item value="09:45"/>
+                <item value="10:00"/>
+                <item value="10:15"/>
+                <item value="10:30"/>
+                <item value="10:45"/>
+                <item value="11:00"/>
+                <item value="11:15"/>
+                <item value="11:30"/>
+                <item value="11:45"/>
+                <item value="12:00"/>
+                <item value="12:15"/>
+                <item value="12:30"/>
+                <item value="12:45"/>
+                <item value="13:00"/>
+                <item value="13:15"/>
+                <item value="13:30"/>
+                <item value="13:45"/>
+                <item value="14:00"/>
+                <item value="14:15"/>
+                <item value="14:30"/>
+                <item value="14:45"/>
+                <item value="15:00"/>
+                <item value="15:15"/>
+                <item value="15:30"/>
+                <item value="15:45"/>
+                <item value="16:00"/>
+                <item value="16:15"/>
+                <item value="16:30"/>
+                <item value="16:45"/>
+                <item value="17:00"/>
+                <item value="17:15"/>
+                <item value="17:30"/>
+                <item value="17:45"/>
+                <item value="18:00"/>
+                <item value="18:15"/>
+                <item value="18:30"/>
+                <item value="18:45"/>
+                <item value="19:00"/>
+                <item value="19:15"/>
+                <item value="19:30"/>
+                <item value="19:45"/>
+                <item value="20:00"/>
+                <item value="20:15"/>
+                <item value="20:30"/>
+                <item value="20:45"/>
+                <item value="21:00"/>
+                <item value="21:15"/>
+                <item value="21:30"/>
+                <item value="21:45"/>
+                <item value="22:00"/>
+                <item value="22:15"/>
+                <item value="22:30"/>
+                <item value="22:45"/>
+                <item value="23:00"/>
+              </model>
+            </properties>
+          </component>
+          <component id="3797b" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Enter class name"/>
+            </properties>
+          </component>
+          <component id="94c53" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="4" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Select class location"/>
+            </properties>
+          </component>
+          <component id="d39e" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Enter Start time"/>
+            </properties>
+          </component>
+          <component id="c7b62" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="8" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Enter End time"/>
+            </properties>
+          </component>
+          <component id="83f1a" class="javax.swing.JButton" binding="another">
+            <constraints>
+              <grid row="10" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Add another class to schedule"/>
+            </properties>
+          </component>
+          <component id="f6c55" class="javax.swing.JButton" binding="complete">
+            <constraints>
+              <grid row="10" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Add class and stop editing"/>
+            </properties>
+          </component>
+          <component id="b147f" class="javax.swing.JButton" binding="stopEditingButton" default-binding="true">
+            <constraints>
+              <grid row="11" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Stop editing"/>
+            </properties>
+          </component>
+          <component id="dc6cd" class="javax.swing.JTextField" binding="cLocation">
+            <constraints>
+              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value=""/>
+              <visible value="false"/>
+            </properties>
+          </component>
+          <component id="c607f" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Select day of class"/>
+            </properties>
+          </component>
+          <component id="89793" class="javax.swing.JComboBox" binding="cDay">
+            <constraints>
+              <grid row="2" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <editable value="false"/>
+              <model>
+                <item value="Monday"/>
+                <item value="Tuesday"/>
+                <item value="Wednesday"/>
+                <item value="Thursday"/>
+                <item value="Friday"/>
+                <item value="Saturday"/>
+                <item value="Sunday"/>
+              </model>
+            </properties>
+          </component>
+          <component id="fce21" class="javax.swing.JComboBox" binding="uBuild">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <editable value="false"/>
+              <model>
+                <item value="Bevill Center"/>
+                <item value="Business Administration Building"/>
+                <item value="Business Services Building"/>
+                <item value="Central Receiving &amp; Shipping"/>
+                <item value="Charger Union"/>
+                <item value="Conference Training Center"/>
+                <item value="Cramer Research Hall"/>
+                <item value="Early Learning Center"/>
+                <item value="Engineering Building"/>
+                <item value="Intermodal Parking Facility"/>
+                <item value="Invention to Innovation Center"/>
+                <item value="Johnson Research Center"/>
+                <item value="Materials Science Building"/>
+                <item value="Morton Hall"/>
+                <item value="Nursing Building"/>
+                <item value="Olin B. King Technology Hall"/>
+                <item value="Optics Building"/>
+                <item value="Physical Plant Building"/>
+                <item value="Roberts Hall"/>
+                <item value="Salmon Library"/>
+                <item value="Shelbie King Hall"/>
+                <item value="Shelby Center for Sci. &amp; Tech."/>
+                <item value="Spragins Hall"/>
+                <item value="Student Services Building"/>
+                <item value="SWIRLL"/>
+                <item value="University Fitness Center"/>
+                <item value="Union Grove Gallery"/>
+                <item value="von Braun Research Hall"/>
+                <item value="Wilson Hall"/>
+                <item value="WLRH Radio Station"/>
+              </model>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="a866e" binding="resSub" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <card name="Card5"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="21002" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="6" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="dabce" class="javax.swing.JTextArea" binding="currentSchedule">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                  <font size="14"/>
+                  <lineWrap value="true"/>
+                  <text value=""/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <component id="619f8" class="javax.swing.JButton" binding="findAllOpenRestaurantsButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="36"/>
+              <text value="Find all open restaurants after specified class/time"/>
+            </properties>
+          </component>
+          <component id="a3d72" class="javax.swing.JButton" binding="mM">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="36"/>
+              <text value="Main Menu"/>
+            </properties>
+          </component>
+          <component id="6be7a" class="javax.swing.JButton" binding="findRestaurantsVisitableBetweenButton" default-binding="true">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="36"/>
+              <text value="Find Restaurants Visitable Between Classes"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="752c3" binding="rfDaySelect" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <card name="Card6"/>
+        </constraints>
+        <properties/>
+        <border type="none" title="v"/>
+        <children>
+          <component id="fe24e" class="javax.swing.JComboBox" binding="cusTime">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <model>
+                <item value="06:00"/>
+                <item value="06:15"/>
+                <item value="06:30"/>
+                <item value="06:45"/>
+                <item value="07:00"/>
+                <item value="07:15"/>
+                <item value="07:30"/>
+                <item value="07:45"/>
+                <item value="08:00"/>
+                <item value="08:15"/>
+                <item value="08:30"/>
+                <item value="08:45"/>
+                <item value="09:00"/>
+                <item value="09:15"/>
+                <item value="09:30"/>
+                <item value="09:45"/>
+                <item value="10:00"/>
+                <item value="10:15"/>
+                <item value="10:30"/>
+                <item value="10:45"/>
+                <item value="11:00"/>
+                <item value="11:15"/>
+                <item value="11:30"/>
+                <item value="11:45"/>
+                <item value="12:00"/>
+                <item value="12:15"/>
+                <item value="12:30"/>
+                <item value="12:45"/>
+                <item value="13:00"/>
+                <item value="13:15"/>
+                <item value="13:30"/>
+                <item value="13:45"/>
+                <item value="14:00"/>
+                <item value="14:15"/>
+                <item value="14:30"/>
+                <item value="14:45"/>
+                <item value="15:00"/>
+                <item value="15:15"/>
+                <item value="15:30"/>
+                <item value="15:45"/>
+                <item value="16:00"/>
+                <item value="16:15"/>
+                <item value="16:30"/>
+                <item value="16:45"/>
+                <item value="17:00"/>
+                <item value="17:15"/>
+                <item value="17:30"/>
+                <item value="17:45"/>
+                <item value="18:00"/>
+                <item value="18:15"/>
+                <item value="18:30"/>
+                <item value="18:45"/>
+                <item value="19:00"/>
+                <item value="19:15"/>
+                <item value="19:30"/>
+                <item value="19:45"/>
+                <item value="20:00"/>
+                <item value="20:15"/>
+                <item value="20:30"/>
+                <item value="20:45"/>
+                <item value="21:00"/>
+                <item value="21:15"/>
+                <item value="21:30"/>
+                <item value="21:45"/>
+                <item value="22:00"/>
+                <item value="22:15"/>
+                <item value="22:30"/>
+                <item value="22:45"/>
+                <item value="23:00"/>
+              </model>
+            </properties>
+          </component>
+          <component id="ac397" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Select time"/>
+            </properties>
+          </component>
+          <component id="6a6e4" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Select day"/>
+            </properties>
+          </component>
+          <component id="441d0" class="javax.swing.JComboBox" binding="cusDay">
+            <constraints>
+              <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <editable value="false"/>
+              <model>
+                <item value="Monday"/>
+                <item value="Tuesday"/>
+                <item value="Wednesday"/>
+                <item value="Thursday"/>
+                <item value="Friday"/>
+                <item value="Saturday"/>
+                <item value="Sunday"/>
+              </model>
+            </properties>
+          </component>
+          <component id="732ab" class="javax.swing.JButton" binding="canC">
+            <constraints>
+              <grid row="6" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Finished"/>
+            </properties>
+          </component>
+          <component id="f7ec4" class="javax.swing.JButton" binding="cFirm">
+            <constraints>
+              <grid row="4" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Confirm"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
