@@ -105,26 +105,19 @@ public class GUI {
                 mainMenu.revalidate();
 
 
-
-
-
-
-
-
-
             }
         });
         another.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                uahClass d = new uahClass("","",null,null, "");
+                uahClass d = new uahClass("", "", null, null, "");
                 getData(d);
-                if(d.startTime.compareTo(d.endTime) >-1){
-                    JOptionPane.showMessageDialog(null,"The end time must be later than the start time");
-                }
-                else{
+                if (d.startTime.compareTo(d.endTime) > -1) {
+                    JOptionPane.showMessageDialog(null, "The end time must be later than the start time");
+                } else {
                     s.addToSchedule(d);
-                    JOptionPane.showMessageDialog(null,"Class added to schedule \n" + s.viewSchedule());}
+                    JOptionPane.showMessageDialog(null, "Class added to schedule \n" + s.viewSchedule());
+                }
 
 
             }
@@ -141,24 +134,26 @@ public class GUI {
         complete.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                uahClass d = new uahClass("","",null,null, "");
+                uahClass d = new uahClass("", "", null, null, "");
                 getData(d);
-                if(d.startTime.compareTo(d.endTime) >-1){
-                    JOptionPane.showMessageDialog(null,"The end time must be later than the start time");
-                }
-                else{
+                if (d.startTime.compareTo(d.endTime) > -1) {
+                    JOptionPane.showMessageDialog(null, "The end time must be later than the start time");
+                } else {
                     s.addToSchedule(d);
-                    JOptionPane.showMessageDialog(null,"Class added to schedule \n" + s.viewSchedule());}
+                    JOptionPane.showMessageDialog(null, "Class added to schedule \n" + s.viewSchedule());
+                }
                 mainMenu.removeAll();
                 mainMenu.add(scheduleEditor);
                 mainMenu.repaint();
-                mainMenu.revalidate();}
+                mainMenu.revalidate();
+            }
 
-        });clearSchedule.addActionListener(new ActionListener() {
+        });
+        clearSchedule.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 s.clearSchedule();
-                JOptionPane.showMessageDialog(null,"Schedule Cleared");
+                JOptionPane.showMessageDialog(null, "Schedule Cleared");
             }
         });
 
@@ -174,28 +169,26 @@ public class GUI {
         findAllOpenRestaurantsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String optio[] = {"Manual entry", "Use time from schedule"};
-                int result = JOptionPane.showOptionDialog(null,"Are you choosing a time from a class or manually inputting one",null, 0,2,null,optio,optio[0]);
-                if (result == 1){
-                    if (s.classSchedule.size() == 0){
+                String[] optio = {"Manual entry", "Use time from schedule"};
+                int result = JOptionPane.showOptionDialog(null, "Are you choosing a time from a class or manually inputting one", null, 0, 2, null, optio, optio[0]);
+                if (result == 1) {
+                    if (s.classSchedule.size() == 0) {
                         JOptionPane.showMessageDialog(null, "You have not created a schedule yet.");
-                    }
-                    else {
+                    } else {
                         ArrayList<Integer> options = new ArrayList<Integer>();
 
                         for (int i = 0; i < s.classSchedule.size(); i++) {
-                            options.add(i+1);
+                            options.add(i + 1);
                         }
-                        Integer opt[] = options.toArray(new Integer[0]);
+                        Integer[] opt = options.toArray(new Integer[0]);
 
                         int selection = JOptionPane.showOptionDialog(null, "Choose a class by it's number from this list \n" + s.viewSchedule(), "Class remover", 0, s.classSchedule.size(), null, opt, opt[0]);
-                      rf.findOpenRestaurants(s.classSchedule.get(selection).endTime, s.classSchedule.get(selection).day);
+                        rf.findOpenRestaurants(s.classSchedule.get(selection).endTime, s.classSchedule.get(selection).day);
 
                         JOptionPane.showMessageDialog(null, rf.viewRestaurants());
                     }
 
-                }
-                else {
+                } else {
                     mainMenu.removeAll();
                     mainMenu.add(rfDaySelect);
                     mainMenu.repaint();
@@ -203,10 +196,10 @@ public class GUI {
                     cFirm.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            uahClass cusD = new uahClass("","",null,null, "");
+                            uahClass cusD = new uahClass("", "", null, null, "");
                             cRFDat(cusD);
-                            rf.findOpenRestaurants(cusD.endTime,cusD.day);
-                            JOptionPane.showMessageDialog(null,rf.viewRestaurants());
+                            rf.findOpenRestaurants(cusD.endTime, cusD.day);
+                            JOptionPane.showMessageDialog(null, rf.viewRestaurants());
 
                         }
                     });
@@ -237,25 +230,29 @@ public class GUI {
         findRestaurantsVisitableBetweenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ArrayList<Integer> options = new ArrayList<Integer>();
+                if (s.classSchedule.size()==0){
+                    JOptionPane.showMessageDialog(null,"You need to have a schedule for this option.");
+                }
+                else{
+                    ArrayList<Integer> options = new ArrayList<Integer>();
 
-                for (int i = 0;i<s.classSchedule.size();i++){
-                    options.add(i);
-                }
-                Integer opt[] = options.toArray(new Integer[0]);
-                String tOpt[] = {"Driving", "Walking"};
-                int selection1 = JOptionPane.showOptionDialog(null,"Choose the first class by its number \n" + s.viewSchedule(),"Nearby restaurants, class picker 1",1,s.classSchedule.size(),null, opt,opt[0] );
-                int selection2 = JOptionPane.showOptionDialog(null,"Now choose the second class using its number \n" + s.viewSchedule(),"Nearby restaurants, class picker 2",1,s.classSchedule.size(),null, opt,opt[0] );
-                if (DayOfWeek.valueOf(s.classSchedule.get(selection1).day).getValue() == DayOfWeek.valueOf(s.classSchedule.get(selection2).day).getValue()) {
-                    int transport = JOptionPane.showOptionDialog(null,"Now choose whether you wish to walk or drive","Transport method picker",0,2,null, tOpt,tOpt[0] );
-                    rf.findOpenRestaurants(s.classSchedule.get(selection1).endTime, s.classSchedule.get(selection1).day);
-                    String s1acro = rf.getAcr(s.classSchedule.get(selection1).location);
-                    String s2acro = rf.getAcr(s.classSchedule.get(selection2).location);
-                    String closestRes = rf.closestRestaurants(rf.openRestaurantAcronyms,rf.openRestaurants,s1acro,s.classSchedule.get(selection1).endTime,s.classSchedule.get(selection2).startTime,transport,s2acro);
-                    JOptionPane.showMessageDialog(null,closestRes);
-                }
-                else {
-                    JOptionPane.showMessageDialog(null,"These classes are on different days");
+                    for (int i = 0; i < s.classSchedule.size(); i++) {
+                        options.add(i);
+                    }
+                    Integer[] opt = options.toArray(new Integer[0]);
+                    String[] tOpt = {"Driving", "Walking"};
+                    int selection1 = JOptionPane.showOptionDialog(null, "Choose the first class by its number \n" + s.viewSchedule(), "Nearby restaurants, class picker 1", 1, s.classSchedule.size(), null, opt, opt[0]);
+                    int selection2 = JOptionPane.showOptionDialog(null, "Now choose the second class using its number \n" + s.viewSchedule(), "Nearby restaurants, class picker 2", 1, s.classSchedule.size(), null, opt, opt[0]);
+                    if (DayOfWeek.valueOf(s.classSchedule.get(selection1).day).getValue() == DayOfWeek.valueOf(s.classSchedule.get(selection2).day).getValue()) {
+                        int transport = JOptionPane.showOptionDialog(null, "Now choose whether you wish to walk or drive", "Transport method picker", 0, 2, null, tOpt, tOpt[0]);
+                        rf.findOpenRestaurants(s.classSchedule.get(selection1).endTime, s.classSchedule.get(selection1).day);
+                        String s1acro = rf.getAcr(s.classSchedule.get(selection1).location);
+                        String s2acro = rf.getAcr(s.classSchedule.get(selection2).location);
+                        String closestRes = rf.closestRestaurants(rf.openRestaurantAcronyms, rf.openRestaurants, s1acro, s.classSchedule.get(selection1).endTime, s.classSchedule.get(selection2).startTime, transport, s2acro);
+                        JOptionPane.showMessageDialog(null, closestRes);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "These classes are on different days");
+                    }
                 }
             }
         });
@@ -271,7 +268,6 @@ public class GUI {
     }
 
 
-
     public void getData(uahClass data) {
         data.setName(cName.getText());
         data.setStartTime(LocalTime.parse(String.valueOf(cSTime.getSelectedItem())));
@@ -279,11 +275,11 @@ public class GUI {
         data.setLocation(String.valueOf(uBuild.getSelectedItem()));
         data.setDay((String.valueOf(cDay.getSelectedItem())).toUpperCase());
     }
+
     public void cRFDat(uahClass data) {
         data.setEndTime(LocalTime.parse(String.valueOf(cusTime.getSelectedItem())));
         data.setDay((String.valueOf(cusDay.getSelectedItem()).toUpperCase()));
     }
-
 
 
 }
